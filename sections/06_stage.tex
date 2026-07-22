@@ -1,0 +1,64 @@
+\chapter{Le déroulement de mon stage}
+\label{chap:stage}
+
+Ce chapitre décrit concrètement ce que j'ai fait pendant mon stage. Comme il s'agit d'un stage opérateur, mes tâches relevaient de l'assistance et de l'observation plutôt que de la production d'ingénierie~; je m'attache donc à décrire honnêtement mon rôle réel, les difficultés rencontrées et la manière dont je les ai gérées.
+
+\section{Contribuer à la préparation des rapports d'avancement}
+
+Ma principale contribution a consisté à assister mon tuteur, M.~Saïd~\textsc{Assabane}, Directeur Adjoint, dans la \textbf{préparation des rapports hebdomadaires} de suivi du chantier des convoyeurs de Tizert (chapitre~\ref{chap:projets}). Concrètement, mes tâches ont été les suivantes~:
+
+\begin{itemize}
+\item \textbf{collecter} les informations transmises par les équipes de montage et par l'entreprise (avancement, faits marquants, points de vigilance)~;
+\item \textbf{organiser} ces informations techniques de façon claire et cohérente d'une semaine à l'autre~;
+\item \textbf{mettre en forme} des tableaux (indicateurs d'avancement, tonnages) et intégrer des figures (photos de chantier, courbes)~;
+\item \textbf{rédiger et mettre en page} le document sous \LaTeX, afin d'obtenir un rendu professionnel et homogène.
+\end{itemize}
+
+Je tiens à être précise sur ce point~: \emph{je n'étais pas l'auteure de ces rapports}. J'ai contribué à leur préparation et à leur mise en forme, sous la supervision de mon tuteur, qui en validait le contenu. Mon apport se situait donc dans l'\textbf{organisation} et la \textbf{présentation} de l'information, non dans l'analyse technique du chantier.
+
+\paragraph{Difficultés rencontrées et solutions.} Ce travail, en apparence simple, m'a confrontée à plusieurs difficultés que j'ai dû apprendre à gérer~:
+\begin{itemize}
+\item Le \textbf{vocabulaire technique} (pré-assemblage, tronçons \textit{Gantry}, pylônes de support, jalons d'avancement) m'était au départ inconnu. Je me suis constitué un petit lexique personnel et je n'ai pas hésité à demander des clarifications, ce qui a nourri le glossaire de ce rapport.
+\item Les informations arrivaient de \textbf{sources multiples} et pas toujours homogènes. J'ai appris à recouper les données et à privilégier une structure stable de rapport, reprise et actualisée chaque semaine, plutôt que de tout refaire à chaque fois.
+\item La \textbf{mise en page \LaTeX} de tableaux et de figures a demandé de la rigueur~; les difficultés techniques m'ont poussée à progresser dans cet outil, ce qui constitue l'un des apports concrets du stage.
+\end{itemize}
+
+\section{Assister aux échanges techniques}
+
+Mon stage a également comporté une part importante d'\textbf{écoute et d'observation}, à travers les présentations conduites par les ingénieurs (chapitre~\ref{chap:ingenieurs}). Ces échanges m'ont permis de comprendre, sans avoir à les pratiquer moi-même~:
+
+\begin{itemize}
+\item l'ingénierie de procédé (comment transformer un \textit{flowsheet} en usine)~;
+\item la gestion de projet (études par étapes, maîtrise des coûts, planning)~;
+\item l'organisation industrielle d'un grand groupe minier~;
+\item les grands principes de l'ingénierie minière.
+\end{itemize}
+
+Mon attitude, dans ce contexte, a consisté à préparer des questions, à prendre des notes structurées et à reformuler ce que j'avais compris pour le vérifier --- une posture d'apprentissage que je crois avoir développée au fil des semaines.
+
+\section{Observer la communication entre les métiers}
+
+Enfin, ce stage m'a offert un poste d'observation privilégié sur la \textbf{communication entre les différents métiers} de l'ingénierie. En suivant le chantier et les échanges, j'ai constaté que la réalisation d'un ouvrage aussi « simple » en apparence qu'un convoyeur suppose la coordination de nombreuses disciplines~:
+
+\begin{center}
+\begin{tikzpicture}[
+  disc/.style={rectangle, rounded corners=2pt, draw=darkslate!55, fill=darkslate!5,
+    minimum width=2.4cm, minimum height=7mm, align=center, font=\footnotesize},
+  hub/.style={circle, draw=reminexorange!80, fill=reminexorange!12,
+    minimum size=2cm, align=center, font=\small\bfseries},
+  arr/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]}, softgray, line width=0.6pt}]
+\node[hub] (proj) {Gestion\\de projet};
+\node[disc, above left=10mm and 14mm of proj] (proc) {Procédé};
+\node[disc, above=12mm of proj] (meca) {Mécanique};
+\node[disc, above right=10mm and 14mm of proj] (civil) {Génie civil};
+\node[disc, below left=10mm and 14mm of proj] (pip) {Tuyauterie};
+\node[disc, below=12mm of proj] (instr) {Instrumentation};
+\node[disc, below right=10mm and 14mm of proj] (constr) {Construction};
+\foreach \d in {proc,meca,civil,pip,instr,constr}
+  \draw[arr] (proj) -- (\d);
+\end{tikzpicture}
+\captionof{figure}{La gestion de projet coordonne le dialogue entre les disciplines.}
+\label{fig:coordination}
+\end{center}
+
+J'ai notamment observé, à travers les rapports de chantier, comment un problème apparemment mineur --- par exemple une difficulté d'identification des pièces entre les plans d'assemblage et les maquettes numériques --- pouvait ralentir tout un chantier et nécessitait une coordination renforcée entre les intervenants. Cette interdépendance des métiers est sans doute l'un des enseignements les plus concrets de mon stage.

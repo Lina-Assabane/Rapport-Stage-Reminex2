@@ -1,0 +1,93 @@
+\begin{appendices}
+
+\chapter{Organigrammes}
+\label{ann:organigrammes}
+
+Cette annexe rassemble les schémas d'organisation évoqués dans le corps du rapport.
+
+\vspace{4mm}
+\textbf{A.1 --- Organigramme officiel du Groupe / de Reminex.}\\
+Emplacement réservé à l'organigramme officiel fourni par l'entreprise~:
+
+\begin{center}
+\placeholderbox{0.8\linewidth}
+\end{center}
+% Pour insérer l'organigramme officiel :
+% \begin{center}\includegraphics[width=0.9\linewidth]{figures/organigramme.png}\end{center}
+
+\vspace{4mm}
+\textbf{A.2 --- Organisation interne de Reminex.}\\
+Le schéma reconstitué à partir de la présentation de M.~Benchakroun figure à la figure~\ref{fig:org_reminex} (chapitre~\ref{chap:ingenieurs}).
+
+% ---------------------------------------------------------------------
+\chapter{Diagrammes de synthèse}
+\label{ann:diagrammes}
+
+\textbf{B.1 --- Chaîne de valeur minière.} Voir figure~\ref{fig:chaine} (chapitre~\ref{chap:chaine}).
+
+\textbf{B.2 --- Livrables d'ingénierie (BFD $\rightarrow$ PFD $\rightarrow$ P\&ID $\rightarrow$ \textit{datasheets}).} Voir figure~\ref{fig:documents}.
+
+\textbf{B.3 --- Maturation d'un projet (\textit{workflow} d'ingénierie).} Le passage de l'étude d'orientation à l'ingénierie de détail est schématisé ci-dessous.
+
+\begin{center}
+\begin{tikzpicture}[
+  ph/.style={rectangle, rounded corners=2pt, draw=centralegreen!70, fill=centralegreen!8,
+    text width=2.3cm, minimum height=1.1cm, align=center, font=\scriptsize},
+  arr/.style={-{Stealth[length=2.5mm]}, centralegreen!70, line width=1pt}]
+\node[ph] (o) {Étude d'orientation};
+\node[ph, right=5mm of o] (pf) {Pré-faisabilité};
+\node[ph, right=5mm of pf] (f) {Faisabilité};
+\node[ph, right=5mm of f] (b) {Ingénierie de base};
+\node[ph, right=5mm of b] (d) {Ingénierie de détail};
+\node[ph, right=5mm of d] (c) {Construction};
+\foreach \a/\b in {o/pf,pf/f,f/b,b/d,d/c} \draw[arr] (\a) -- (\b);
+\end{tikzpicture}
+\end{center}
+
+% ---------------------------------------------------------------------
+\chapter{Photographies de chantier}
+\label{ann:photos}
+
+Emplacements réservés aux photographies prises sur le chantier des convoyeurs ROM de Tizert (à insérer par l'étudiante).
+
+\begin{center}
+\photofig[0.75\linewidth]{Vue générale du chantier des convoyeurs ROM.}{ann:photo1}
+\photofig[0.75\linewidth]{Opérations de pré-assemblage / montage.}{ann:photo2}
+\end{center}
+% Remplacer chaque \photofig par un \includegraphics, par exemple :
+% \begin{figure}[htbp]\centering
+%   \includegraphics[width=0.75\linewidth]{figures/chantier_01.jpg}
+%   \caption{Vue générale du chantier.}\end{figure}
+
+% ---------------------------------------------------------------------
+\chapter{Exemple de rapport hebdomadaire de chantier}
+\label{ann:rapport}
+
+Cette annexe reproduit, \emph{à titre d'illustration du format de reporting}, un extrait du rapport hebdomadaire de suivi du chantier des convoyeurs ROM de Tizert (semaine S27). Ce document est présenté comme exemple de mise en forme~; il ne constitue pas un travail dont je serais l'auteure (cf. chapitre~\ref{chap:stage}).
+
+\vspace{3mm}
+\textbf{Extrait --- indicateurs globaux d'avancement} (périmètre total~: 351,06~tonnes)~:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}l r r r@{}}
+\toprule
+\textbf{Jalon} & \textbf{Réalisé (T)} & \textbf{Avancement} & \textbf{Reste (T)} \\
+\midrule
+Inventaire & 309,80 & 88\,\% & 41,28 \\
+Pré-assemblage & 97,80 & 28\,\% & 230,46 \\
+Montage & 79,20 & 23\,\% & 271,90 \\
+\bottomrule
+\end{tabular}
+\captionof{table}{Exemple de tableau de bord d'avancement (source~: rapport de chantier Reminex, S27).}
+\end{center}
+
+\vspace{2mm}
+Le document complet comporte en outre~: un tableau d'indicateurs de sécurité (\sig{hse}), des photographies de chantier, des courbes d'avancement cumulé, un diagramme de répartition du tonnage, un planning (diagramme de Gantt) et une synthèse des risques. Le fichier PDF complet est joint séparément.
+
+\begin{center}
+\placeholderbox{0.7\linewidth}
+\end{center}
+% Emplacement pour une capture d'écran du rapport complet, le cas échéant.
+
+\end{appendices}
