@@ -1,0 +1,59 @@
+\chapter{La chaîne de valeur minière}
+\label{chap:chaine}
+
+L'une des présentations les plus structurantes de mon stage a été celle de M.~Sami~\textsc{Sayeh}, qui m'a exposé l'organisation générale du Groupe et la « chaîne de valeur » minière. Ce chapitre restitue, avec mes mots, ce qui m'a été expliqué lors de cet échange~; il s'agit donc d'une source orale, complétée par mes notes.
+
+\section{Du gisement au métal : une succession d'étapes}
+
+M.~Sayeh m'a d'abord fait comprendre qu'un projet minier n'est pas un acte unique mais une longue succession d'étapes, chacune conditionnant la suivante. Je les ai schématisées ainsi~:
+
+\begin{center}
+\begin{tikzpicture}[
+  node distance=2.1mm,
+  vnode/.style={rectangle, rounded corners=2pt, draw=centralegreen!70, fill=centralegreen!8,
+    text width=5.6cm, minimum height=6mm, align=center, font=\small},
+  arr/.style={-{Stealth[length=2.5mm]}, centralegreen!70, line width=0.9pt}]
+\node[vnode] (s1) {Exploration};
+\node[vnode, below=of s1] (s2) {Géologie};
+\node[vnode, below=of s2] (s3) {Estimation des ressources};
+\node[vnode, below=of s3] (s4) {Conception de la mine \textit{(mine design)}};
+\node[vnode, below=of s4] (s5) {Extraction (exploitation minière)};
+\node[vnode, below=of s5] (s6) {Transport du minerai};
+\node[vnode, below=of s6] (s7) {Traitement du minerai};
+\node[vnode, below=of s7] (s8) {Métallurgie};
+\node[vnode, below=of s8] (s9) {Commercialisation};
+\node[vnode, below=of s9] (s10) {Amélioration continue};
+\foreach \a/\b in {s1/s2,s2/s3,s3/s4,s4/s5,s5/s6,s6/s7,s7/s8,s8/s9,s9/s10}
+  \draw[arr] (\a) -- (\b);
+\end{tikzpicture}
+\captionof{figure}{La chaîne de valeur minière telle qu'elle m'a été présentée.}
+\label{fig:chaine}
+\end{center}
+
+Ce qui m'a marquée, c'est que la valeur se construit progressivement~: on part d'une simple hypothèse géologique et on aboutit, au bout de la chaîne, à un métal vendable. Chaque étape « ajoute » de la connaissance ou de la transformation, et une erreur en amont (par exemple une mauvaise estimation des ressources) se paie très cher en aval.
+
+\section{Indicateurs et logique de traitement}
+
+M.~Sayeh a insisté sur quelques \sig{kpi} globaux qui suivent le minerai tout au long de la chaîne, en particulier le \textbf{tonnage}, la \textbf{teneur} (concentration en métal) et le \textbf{rendement} de récupération. C'est la combinaison de ces trois grandeurs qui détermine la quantité de métal réellement produite.
+
+Il m'a aussi montré que le \emph{procédé de traitement dépend du métal visé}. À partir de mes notes, j'ai retenu trois grandes familles~:
+
+\begin{itemize}
+\item les \textbf{métaux précieux} (or, argent) sont généralement traités par cyanuration, avec des procédés d'adsorption sur charbon actif de type \sig{cil}/\sig{cip}, aboutissant à un doré ou à un concentré~;
+\item le \textbf{cuivre} est concentré par \textbf{flottation} avant traitement (projets tels que Tizert, Akka, Guemassa)~;
+\item le \textbf{cobalt} relève d'une voie \textbf{hydrométallurgique}.
+\end{itemize}
+
+Je n'ai pas cherché à maîtriser ces procédés en détail --- ce n'était pas l'objet du stage --- mais à comprendre l'idée générale~: à chaque minerai correspond une « recette » de traitement, et c'est précisément le rôle de l'ingénierie de procédé de définir cette recette.
+
+\section{Où intervient Reminex ?}
+
+La dernière chose que M.~Sayeh m'a aidée à situer, c'est la place de Reminex dans cette chaîne. Reminex n'exploite pas la mine~: elle intervient surtout sur les maillons de \emph{conception et de réalisation}. Concrètement~:
+
+\begin{itemize}
+\item en amont, elle contribue à la \textbf{caractérisation} du minerai et au \textbf{développement du \textit{flowsheet}} (par son centre de R\&D)~;
+\item au cœur du projet, elle réalise l'\textbf{ingénierie} (transformer le \textit{flowsheet} en usine) et pilote la \textbf{construction}~;
+\item en aval, elle accompagne la \textbf{mise en service} et l'\textbf{amélioration} des installations en production.
+\end{itemize}
+
+Autrement dit, Reminex est l'entité qui fait passer un projet du « laboratoire » à « l'usine ». Cette idée, esquissée ici, est développée dans les échanges avec les ingénieurs (chapitre~\ref{chap:ingenieurs}).

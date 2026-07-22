@@ -1,0 +1,115 @@
+% ======================================================================
+%  RAPPORT DE STAGE OPÉRATEUR
+%  Lina Assabane — École Centrale Casablanca
+%  Reminex (Groupe Managem) — Direction Ingénierie / Process Engineering
+%
+%  Compilation (Overleaf : pdfLaTeX + Biber) :
+%     pdflatex main → biber main → pdflatex main → pdflatex main
+% ======================================================================
+\documentclass[12pt,a4paper,oneside]{report}
+
+\input{preamble}
+
+\begin{document}
+
+% ======================================================================
+%  1) PAGE DE GARDE INFORMATIVE
+% ======================================================================
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+
+% --- Logo école -----------------------------------------------------
+\includegraphics[width=3cm]{figures/logo_centrale.png}\\[2mm]
+
+\vspace{0.4cm}
+{\large\scshape École Centrale Casablanca}\\[0.2cm]
+{\color{softgray}Année académique 2025--2026}\\[1.2cm]
+
+\begin{tikzpicture}
+\draw[reminexorange,line width=1pt] (0,0) -- (\textwidth-2cm,0);
+\end{tikzpicture}
+
+\vspace{1.0cm}
+{\Huge\bfseries\color{darkslate} Rapport de stage opérateur}\\[0.5cm]
+{\large\color{centralegreen} À la découverte de l'ingénierie de projet\\ dans l'industrie minière}\\[0.4cm]
+
+\vspace{0.6cm}
+\begin{tikzpicture}
+\draw[reminexorange,line width=1pt] (0,0) -- (\textwidth-2cm,0);
+\end{tikzpicture}
+
+\vspace{1.2cm}
+
+% --- Logo entreprise ------------------------------------------------
+\includegraphics[width=4.2cm]{figures/logo_reminex.png}\\[3mm]
+{\normalsize Filiale d'ingénierie du Groupe Managem}\\[1.4cm]
+
+\begin{minipage}{0.9\textwidth}
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{r l}
+\textbf{Élève} & Lina \textsc{Assabane} \\
+\textbf{N\textsuperscript{o} d'étudiant} & \rule{3cm}{0.4pt} \\
+\textbf{Entité d'accueil} & Reminex --- Groupe Managem \\
+\textbf{Service} & Direction Ingénierie / Process Engineering \\
+\textbf{Ville} & Casablanca, Maroc \\
+\textbf{Période de stage} & du \rule{2cm}{0.4pt} au \rule{2cm}{0.4pt} \\
+\textbf{Tuteur d'accueil} & M. Saïd \textsc{Assabane} \\
+ & Directeur Adjoint \\
+\end{tabular}
+\end{minipage}
+
+\vfill
+{\footnotesize\color{softgray}Document académique --- restitution du stage de première année}
+\end{titlepage}
+
+\pagenumbering{roman}
+
+% ======================================================================
+%  2) REMERCIEMENTS
+% ======================================================================
+\input{sections/00_remerciements}
+
+% ======================================================================
+%  3) GLOSSAIRE / LISTE DES ABRÉVIATIONS
+% ======================================================================
+\input{sections/00_abreviations}
+
+% ======================================================================
+%  4) TABLES
+% ======================================================================
+\microtypesetup{protrusion=false}
+\tableofcontents
+\listoffigures
+\listoftables
+\microtypesetup{protrusion=true}
+\cleardoublepage
+
+% ======================================================================
+%  CORPS DU RAPPORT
+% ======================================================================
+\pagenumbering{arabic}
+
+\input{sections/00_introduction}
+\input{sections/01_managem}
+\input{sections/02_reminex}
+\input{sections/03_chaine_valeur}
+\input{sections/04_ingenieurs}
+\input{sections/05_projets}
+\input{sections/06_stage}
+\input{sections/07_apports}
+\input{sections/08_analyse}
+\input{sections/09_conclusion}
+
+% ======================================================================
+%  BIBLIOGRAPHIE
+% ======================================================================
+\printbibliography[heading=bibintoc,title={Sources et références}]
+
+% ======================================================================
+%  ANNEXES
+% ======================================================================
+\input{sections/10_annexes}
+
+\end{document}

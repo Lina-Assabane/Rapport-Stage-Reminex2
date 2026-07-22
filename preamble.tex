@@ -1,0 +1,120 @@
+% ======================================================================
+%  PRÉAMBULE — Rapport de stage opérateur
+%  (packages, mise en page, couleurs, commandes personnalisées)
+% ======================================================================
+
+% ---- Langue et encodage ---------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}      % typographie française
+\usepackage{lmodern}
+\usepackage{csquotes}
+
+% ---- Mise en page ---------------------------------------------------
+\usepackage[a4paper,margin=2.5cm,headheight=15pt]{geometry}
+\usepackage{setspace}
+\onehalfspacing                 % interligne 1.5 (consigne ECC)
+\usepackage{microtype}
+
+% ---- Graphisme ------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{caption}            % pour \captionof hors flottant
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,arrows.meta,positioning,calc,chains,fit,backgrounds}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% ---- Tableaux -------------------------------------------------------
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+
+% ---- Listes ---------------------------------------------------------
+\usepackage{enumitem}
+\setlist{itemsep=2pt,topsep=3pt}
+
+% ---- Titres et en-têtes --------------------------------------------
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[nottoc]{tocbibind}  % TdM/figures/tables dans la table des matières
+\usepackage[titletoc]{appendix}
+
+% ---- Liens et bibliographie ----------------------------------------
+\usepackage[hidelinks]{hyperref}
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+\addbibresource{references.bib}
+
+% ======================================================================
+%  COULEURS
+% ======================================================================
+\definecolor{centralegreen}{RGB}{0,124,102}   % vert Centrale (accent titres)
+\definecolor{reminexorange}{RGB}{240,160,20}   % orange Reminex/Managem
+\definecolor{darkslate}{RGB}{45,52,60}         % gris ardoise
+\definecolor{softgray}{RGB}{120,128,138}
+
+% ======================================================================
+%  STYLE DES TITRES (chapitres = "PARTIE")
+% ======================================================================
+% Les chapitres numérotés sont intitulés « Partie »
+\addto\captionsfrench{\renewcommand{\chaptername}{Partie}}
+
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\color{darkslate}}
+  {\filright\large\color{reminexorange}\MakeUppercase{\chaptertitlename}~\thechapter}
+  {4pt}
+  {\titlerule[1.1pt]\vspace{3pt}\filright}
+  [\vspace{2pt}{\color{reminexorange}\titlerule[1.1pt]}]
+\titlespacing*{\chapter}{0pt}{-18pt}{16pt}
+
+\titleformat{\section}
+  {\normalfont\large\bfseries\color{centralegreen}}{\thesection}{0.8em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries\color{darkslate}}{\thesubsection}{0.7em}{}
+
+% ======================================================================
+%  EN-TÊTES ET PIEDS DE PAGE
+% ======================================================================
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\small\color{softgray}Rapport de stage opérateur}
+\fancyhead[R]{\small\color{softgray}Reminex --- Groupe Managem}
+\fancyfoot[C]{\thepage}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[C]{\thepage}}
+
+% ======================================================================
+%  COMMANDES PERSONNALISÉES
+% ======================================================================
+
+% --- Encadré "présenté par un ingénieur" (source orale) --------------
+\newtcolorbox{presente}[1][]{%
+  enhanced, breakable, colback=reminexorange!7, colframe=reminexorange!70,
+  boxrule=0.4pt, arc=2pt, left=8pt, right=8pt, top=6pt, bottom=6pt,
+  fonttitle=\bfseries, #1}
+
+% --- Emplacement de photo (compile sans fichier externe) -------------
+% Usage :  \photofig[largeur]{légende}{label}
+% Pour insérer la vraie photo : remplacer le bloc \placeholderbox par
+%   \includegraphics[width=<largeur>]{figures/mon_image.jpg}
+\newcommand{\placeholderbox}[1]{%
+  \fbox{\begin{minipage}[c][42mm][c]{#1}%
+    \centering\color{softgray}\itshape\footnotesize
+    [\,Emplacement réservé à une photo\,]\\[1mm]
+    \tiny(remplacer par \textbackslash includegraphics)%
+  \end{minipage}}}
+
+\newcommand{\photofig}[3][0.68\linewidth]{%
+  \begin{figure}[htbp]\centering
+    \placeholderbox{#1}%
+    \caption{#2}\label{#3}
+  \end{figure}}
+
+% --- Sigle mis en valeur ---------------------------------------------
+\newcommand{\sig}[1]{\textsc{#1}}
